@@ -1,0 +1,1 @@
+C:\Users\tsvetilian\dev\SimpleEventHub\buildSrc\build\classes\kotlin\main\SimpleEventHubConfig.class
