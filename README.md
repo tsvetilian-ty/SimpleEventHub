@@ -49,6 +49,7 @@ SimpleEventHub.on<String>(eventName = "test-event", bindToLifecycle = viewLifecy
 
 ### Disposable subscriber
 > The method will return `DisposableSubscriber` that can be used for disposing of the subscriber at any time.
+
 *__Params:__*
   - `eventName` - name of the event that will be used to determine when to call the subscriber's receiver
   - `receiveCachedData` - receive the cached data from the last event emission if such is available Default: `false`
