@@ -19,7 +19,7 @@ jobs:
           java-version: 11
 
       - name: Make gradlew executable
-          run: chmod +x ./gradlew
+        run: chmod +x ./gradlew
 
       - name: Release build
         run: ./gradlew :simple-eventhub:assembleRelease
