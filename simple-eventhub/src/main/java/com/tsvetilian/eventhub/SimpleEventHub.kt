@@ -5,7 +5,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
 import com.tsvetilian.eventhub.core.ObserveEmit
-import com.tsvetilian.eventhub.core.listeners.DisposableEvent
+import com.tsvetilian.eventhub.core.listeners.DisposableSubscriber
 import com.tsvetilian.eventhub.core.listeners.SimpleEventHubLogger
 import com.tsvetilian.eventhub.core.listeners.impl.DefaultSimpleEventHubLogger
 import com.tsvetilian.eventhub.core.models.Subscriber
@@ -107,7 +107,7 @@ object SimpleEventHub {
 		receiveCachedData: Boolean = false,
 		observeOn: ObserveEmit = ObserveEmit.ON_MAIN,
 		noinline receiver: (T?) -> Unit
-	): DisposableEvent {
+	): DisposableSubscriber {
 		val subscriberContainer =
 			Subscriber(
 				eventName = eventName,
@@ -129,7 +129,7 @@ object SimpleEventHub {
 			this.logger?.log("Received latest data for '$eventName'")
 		}
 
-		return object : DisposableEvent {
+		return object : DisposableSubscriber {
 			override fun dispose() {
 				val subscribersList = subscribers[eventName]
 				subscribersList?.remove(subscriberContainer)

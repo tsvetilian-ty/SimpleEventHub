@@ -1,5 +1,5 @@
 package com.tsvetilian.eventhub.core.listeners
 
-interface DisposableEvent {
+interface DisposableSubscriber {
 	fun dispose()
 }
