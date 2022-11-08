@@ -7,12 +7,13 @@ Lifecycle-aware pub/sub event system for Android.
 ![Maven Central](https://img.shields.io/maven-central/v/com.tsvetilian/simple-eventhub)
 
 # Content
-- [Add in your application](#using-in-your-application)
+- [Add in your application](#add-in-your-application)
 - [How to use](#how-to-use)
     - [Emit an event](#emit-an-event)
     - [Subscribers](#subscribers)
       - [Lifecycle-aware subscriber](#lifecycle-aware-subscriber)
       - [Disposable subscriber](#disposable-subscriber)
+- [Logs](#logs)
 
 ## Add in your application
 If you are building with Gradle, add the following line to the `dependencies` section of your `build.gradle` file:
@@ -63,3 +64,6 @@ val eventSubscriber = SimpleEventHub.on<String>(eventName = "test-event") {
 
 eventSubscriber.dispose()
 ```
+
+## Logs
+To observe logs from the library, use the tag `SimpleEventHub` in logcat.
